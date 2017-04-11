@@ -1,0 +1,29 @@
+<div class="form-group col-md-8">
+  <div class="form-group">
+   <label for="exampleInputEmail2">Procurar</label>
+   <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Procurar" ng-filter="procurarProduto">
+  </div>
+  <a class="btn btn-success" href="#/produto/produtoForm" role="button">Novo</a>
+ </div>
+
+ <table class="table">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="p in listaProdutos | filter:procurarProduto ">
+        <td>{{p.codigo}}</td>
+        <td>{{p.descricao}}</td>
+        <td>{{p.preco}}</td>
+        <td>
+          <a class="btn btn-info" href="#/produto/editar" role="button">Editar</a>
+          <a class="btn btn-info" href="#/produto/remover" role="button">Remover</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
